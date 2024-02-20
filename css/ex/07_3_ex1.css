@@ -1,0 +1,69 @@
+.color-name {
+    color: red;
+}
+.color-hex {
+    color: #b700ff
+}
+.color-rgb {
+    color: rgb(255, 0 ,255)
+}
+.color-rgba {
+    color: rgb(255, 0 ,255, 0.3)
+}
+.color-hsla {
+    color: hsl(255, 100%, 50%)
+}
+/* 현업에서는 16진수와 RGB,RGBA 방식을 많이 사용한다 */
+
+/* 텍스트 정렬 */
+#p-center {
+    text-align: center;
+}
+#p-right {
+    text-align: right;
+}
+#p-left {
+    text-align: left;
+}
+
+.div-center {
+    width: 200px;
+    height: 200px;
+    background-color: burlywood;
+}
+.div-center p {
+    text-align: center;
+    line-height: 200px;
+    /* line_height : 줄간격 조절을 통해 중앙으로 정렬 */
+}
+
+/* 영어 첫 글자를 대문자로 변환 */
+.capitalize {
+    text-transform: capitalize;
+}
+/* 텍스트를 영어 대문자로 변환 */
+.uppercase {
+    text-transform: uppercase;
+}
+/* 텍스트를 영어 소문자로 변환 */
+.lowercase {
+    text-transform: lowercase;
+}
+
+/* 자간 설정 */
+/* 설정은 px, em, rem등 사용가능하다 */
+/* 현업에서는 폰트를 사올 때 설정이 
+   되어 있기 때문에 많이 사용하는 속성은 아니다 */
+.letter-spacing {
+    letter-spacing: 0.2rem;
+}
+.word-spacing {
+    word-spacing: 2rem;
+}
+/* 텍스트 그림자 설정 */
+/* text-shadow : 가로위치, 세로위치, 그림자크기, 색상;
+   으로 조절 */
+   /* 왼쪽이나 위쪽으로 조절하고 싶으면 '-'를 사용 */
+.shadow {
+    text-shadow: 5px 2px 5px #ff0000 ;
+}

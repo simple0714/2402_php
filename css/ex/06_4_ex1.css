@@ -1,0 +1,17 @@
+/* !important 최우선적용되는 스타일
+    현업에서는 사용되지 않는다(꼬일 수 있음) */
+#id-test {
+    color: blueviolet;
+}
+.class-test {
+    color: aqua;
+}
+h1 {
+    color: red;
+}
+h1 {
+    color: green;
+}
+/* h2 {
+    color: beige;
+} */
