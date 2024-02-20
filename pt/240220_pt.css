@@ -1,0 +1,16 @@
+* {
+    color: black;
+}
+h1 {
+    color: blueviolet;
+}
+.li-color {
+    color: #ff0000;
+}
+.p-1 {
+    color: rgba(255, 0, 0, 1);
+    text-decoration: underline rgba(0, 0, 0, 1);
+}
+#b-1 {
+    text-align: right;
+}

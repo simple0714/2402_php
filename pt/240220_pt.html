@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {background-color: rgba(20, 20, 20, 0.3)}
+    </style>
+    <link rel="stylesheet" href="./240220_pt.css">
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="">
+        <fieldset>
+            <legend class="asd1">입력란</legend>
+            <p class="p-1">빨간 점은 필수 선택 사항</p>
+            <ul>
+                <li class="li-color">
+                    <label for="id">ID</label>
+                    <input type="text" name="id" id="id" required placeholder="8자~14자" minlength="8" maxlength="14">
+                </li>
+                <li class="li-color">
+                    <label for="pw">PW</label>
+                    <input type="password" name="pw" id="pw" required placeholder="영어, 특수문자, 숫자 포함">
+                </li>
+                <li class="li-color">
+                    <label for="way">가입경로</label>
+                    <select name="way" id="way" required>
+                        <option value="0">블로그</option>
+                        <option value="1">검색</option>
+                        <option value="2">유튜브</option>
+                        <option value="3">학교,학원</option>
+                        <option value="4">지인추천</option>
+                        <option value="5">기타</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="rcm-p">추천인 기재</label>
+                    <input type="text" name="rcm-p" id="rcm-p" placeholder="추천인이 있을 경우 기재해주세요">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset background->
+            <legend>이벤트와 새로운 소식</legend>
+            <input type="radio" name="event" id="event-1" required>
+            <label for="event-1">이메일 수신</label>
+            <br>
+            <input type="radio" name="event" id="event-2">
+            <label for="event-2">이메일, SMS 수신</label>
+            <br>
+            <input type="radio" name="event" id="event-3">
+            <label for="">SMS만 수신</label>
+            <br>
+            <input type="radio" name="event" id="event-4">
+            <label for="event-4">수신 안함</label>
+            <br>
+        </fieldset>
+        <button type="submit" id="b-1">가입하기</button>
+        <button type="reset">취소</button>
+    </form>
+</body>
+</html>
