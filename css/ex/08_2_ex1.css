@@ -1,0 +1,21 @@
+.div-border {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #346234;
+}
+/* soilid, dotted, dashed 선 종류 */
+
+.div-radius {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgb(175, 135, 213);
+    border-radius: 80px;
+}
+/* width 와 height, border-radius를 조절하면(ex: 80,80) 완전 동그랗게도 가능 */
+
+.div-side-radius {
+    border: 5px solid gray;
+    margin: 10px;
+    border-top-right-radius: 10px; 
+    border-bottom-right-radius: 10px;
+}

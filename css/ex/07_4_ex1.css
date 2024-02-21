@@ -1,0 +1,20 @@
+/* 마커 없음 */
+.ul-none {
+    list-style-type: none;
+}
+
+/* 숫자 1.2.3 */
+.ul-decimal {
+    list-style-type: decimal;
+}
+
+/* url() <-함수라고 부름  */
+.ul-img {
+    list-style-image: url('../img/docker.png');
+}
+
+/* 들여쓰기 */
+.ul-inside {
+    list-style-position: inside;
+    color: #ad3000;
+}

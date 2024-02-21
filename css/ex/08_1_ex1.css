@@ -1,0 +1,115 @@
+h1 {
+    /* 너비조절, 각 영역은 개별적이고, 합으로 계산*/
+    margin: 10px; 
+    width: 300px; 
+    /*contents 영역만 크기 조절 */
+    /* 높이 조절 */
+    height: 150px;
+}
+
+    /* 
+    %단위로 영역 조절 
+    vw,vh단위로 조절시 높이가 조절됨  
+    %와 뷰포트의 차이는 뷰포트는 보이는 화면기준 %단위는 부모수치기준 
+    */
+
+/* .size-p {
+    background-color: chocolate;
+    width: 50%;
+    height: 30%;
+}
+.size-div {
+    width: 200px;
+    height: 200px;
+}
+.size-div p {
+    background-color: chocolate;
+    width: 50vw;
+    height: 50vh;
+} */
+
+.container {
+    width: 300px;
+    border: 3px solid #000;
+}
+
+div {
+    border: 3px solid red;
+}
+
+
+.div-1 {
+    margin: 5px;
+}
+/* 상하좌우 5px */
+
+.div-2 {
+    margin: 5px 10px;
+}
+/* 1번째 상하 5px, 2번째 좌우 10px*/
+
+.div-3 {
+    margin: 5px 10px 15px;
+}
+/* 위5px, 좌우 10px, 아래 15px */
+
+.div-4 {
+    margin: 5px 10px 15px 20px;
+}
+/* 위5px 우10px 아래15px 좌20px */
+
+.div-5 {
+    width: 100px;
+    margin: auto;
+}
+/* auto를 넣으면 부모속성을 따라서 자동으로 맞춰줌
+   부모width보다 값이 작으면 중앙으로 자동정렬함  */
+
+/* 주고싶은 방향에 값 넣는법 margin-left,right */
+/* margin중첩 : 상하좌우 margin이 겹칠때 큰 값에 작은값이 중첩됨 */
+
+.padding-div-1 {
+    padding: 5px;
+}
+/* 상하좌우 5px */
+.padding-div-2 {
+    padding: 5px 10px;
+}
+/* 상하5px 좌우10px */
+.padding-div-3 {
+    padding: 5px 10px 15px;
+}
+/* 위5px 좌우10px 아래15px */
+.padding-div-4 {
+    padding: 5px 10px 15px 20px;
+}
+/* 위5px 우10px 아래15px 좌20px, padding은 auto없음 */
+
+.div-shadow {
+    margin: 15px;
+    width: 100px;
+    height: 100px;
+    /* 수평거리, 수직거리, 흐림정도, 번점정도, 색상, (그림자방향) */
+    /* 수평거리, 수직거리 값은 양수일경우 우,하로 음수일 경우 좌,상으로 */
+    box-shadow: 10px 20px 20px 10px gray;
+}
+
+.div-content {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: content-box;
+    /* content-box : default 값 
+       content 영역에만 요소의 크기를결정*/
+}
+.div-border {
+    box-sizing: border-box;
+    /* 테두리+패딩+콘텐츠 영역으로 요소의 크기를 결정 */
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* boder, padding, content 를 한번에 설정할 수 있다 */
