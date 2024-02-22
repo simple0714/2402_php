@@ -1,0 +1,14 @@
+.img-1 {
+    float: left;
+    /* float의 기본값은 none로 되어있다. */
+}
+
+img {
+    display: block;
+    float: left;
+}
+
+.clear-float {
+    clear: left;
+}
+/* 기존에 부여된 float속성을 지운다. */

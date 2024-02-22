@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    width: 100vw;
+    height: 20vw;
+    background-color: rgb(164, 118, 208);
+}
+main {
+    width: 100vw;
+    height: 60vh;
+    background-color: rgb(243, 172, 243);
+}
+footer {
+    width: 100vw;
+    height: 20vh;
+    background-color: rgb(130, 161, 162);
+    clear: left;
+}
+aside { 
+    width: 30%;
+    height: 100%;
+    background-color: plum;
+    float: left;
+}
+section {
+    float: left;
+    width: 70%;
+    height: 100%;
+    background-color: beige;
+}
+footer {
+    width: 100vw;
+    height: 20vh;
+    background-color: rgb(130, 161, 162);
+    clear: left;
+}
+/* float를 쓰고 난 뒤 다음 영역에 clear를 부여해줘야 함 */

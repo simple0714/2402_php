@@ -1,0 +1,53 @@
+/* body {
+    background-image: url('../img/ice_americano.jpg'), url('../img/docker.png');
+    background-attachment: fixed;
+    background-size: contain;
+    background-attachment: fixed; : 스크롤을 내려도 이미지가 고정됨  */
+    /*background-size: contain;
+     : 유저가 이용중인 브라우저의 width, height 값에 맞추어 이미지를 조절해줌
+}
+,를 이용해 후순위로 불러올 이미지를 설정할 수 있다.
+div{
+    height: 300vh;
+} */
+
+div{
+    margin: 5px;
+    border: 3px solid #000;
+    width: 200px;
+    height: 100px;
+    background-image: url(../img/docker.png);
+}
+.auto {
+    background-size: auto;
+    /* 원본 크기를 유지(default) */
+}
+.contain {
+    background-size: contain;
+    /* 요소 안에 배경 이미지가 다 들어오도록 확대 및 축소 */
+}
+.cover {
+    background-size: cover;
+    /* 부모요소의 width에 이미지를 맞추고 요소를 모두 덮도록 확대 및 축소. */
+}
+.px {
+    background-size: 10px;
+    /* 하나의 값을 주어 너비를 지정하고, 높이는 너비에 맞게 자동 계산 */
+}
+.vw {
+    background-size: 50%;
+    /* 이미지의 비율에 맞도록 조절 */
+}
+.position-center {
+    background-position: center ;
+    /* 이미지를 중심에 맞추어 배치 */
+}
+.position-top-right {
+    background-position: top 10px right 10px;
+}
+
+/* 이미지의 반복 지정 */
+.no-repeat {
+    /* 반복하지 않음 */
+    background-repeat: no-repeat;
+}

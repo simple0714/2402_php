@@ -1,0 +1,71 @@
+div {
+    padding: 20px;
+}
+.main {
+    width: 300px;
+    background-color: pink;
+}
+.div-static {
+    background-color: gray;
+    position: static;
+    /* static:일반적인 문서의 흐름에 맞춰 배치(default) */
+}
+.div-realative {
+    background-color: rgb(108, 200, 118);
+    /* relative: 기본적으로 static과 같으나, 자신의 원래 위치를 기준으로
+    자신의 원래 위치를 기준으로 위치 지정 가능*/
+    position: relative;
+}
+/* 
+#rel2 {
+    top: 30px;
+    left: 30px;
+} */
+.div-absolute1 {
+    background-color: darksalmon;
+    position: absolute;
+    top: 0;
+}
+.div-absolute2 {
+    background-color: bisque;
+    position: absolute;
+    top: 100px;
+}
+/* 
+absolute:
+    relative가 지정 된 상위 요소를 기준으로 위치를 지정 
+    추후 수정작업시 어려움이 있어서 선호되어 사용되지 않음
+*/
+
+/* fixed : 최상단이동, 1:1 상담등 만들때 사용
+vw를 기준으로 움직이기 때문에 크기조절에 따라 자동으로 위치가 조정됨 */
+.div-sticky {
+    background-color: cornflowerblue;
+    position: sticky;
+    top: 0;
+}
+/* 웹스크롤을 내려도 지정한 위치에 고정(웹 헤더등에 사용) */
+
+.div-fixed {
+    background-color: antiquewhite;
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    z-index: 3;
+}
+.div-fixed2 {
+    position: fixed;
+    background-color: aqua;
+    bottom: 10%;
+    right: 15%;
+    z-index: 2;
+}
+.div-fixed3 {
+    position: fixed;
+    background-color: blue;
+    bottom: 10%;
+    right: 20%;
+    z-index: 1;
+}
+/* z-index : 화면 레이어 순서를 우선순위로 바꿔줄 때 사용
+   숫자가 클수록 위로 올라감. */

@@ -1,0 +1,28 @@
+div, span{
+    border: 3px solid #000;
+    margin: 10px;
+}
+
+.none {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+/* inline은 width를 적용해도 적용되지 않음 */
+
+.inline-block {
+    display: inline-block;
+    width: 400px;
+}
+/* inline-block의 경우 width를 적용하면 적용됨 */
+
+span {
+    display: inline-block;
+    width: 300px
+}
