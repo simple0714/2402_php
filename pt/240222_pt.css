@@ -1,0 +1,27 @@
+body{
+    margin: 5%;
+    height: 2000vh;
+
+}
+.bkimg {
+    font-size: 25px;
+    color: chocolate;
+    margin: 5%;
+}
+.htmlcode {
+    margin: 5%;
+    width: 300px;
+    height: 400px;
+    background-image: url(./HTMLcode.png);
+    background-repeat: no-repeat;
+    float: left;
+}
+.meerkat{
+    margin: 5%;
+    width: 300px;
+    height: 400px;
+    background-image: url(./meerkat.png);
+    background-repeat: no-repeat;
+    clear: left;
+
+}
