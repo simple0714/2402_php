@@ -14,7 +14,6 @@ body{
     height: 400px;
     background-image: url(./HTMLcode.png);
     background-repeat: no-repeat;
-    float: left;
 }
 .meerkat{
     margin: 5%;

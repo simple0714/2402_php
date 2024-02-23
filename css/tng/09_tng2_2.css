@@ -1,0 +1,41 @@
+body {
+    background-color: #000;
+}
+div {
+    width: 600px;
+    height: 869px;
+    margin: 1px 50px 30px;
+    border: 1px solid white;
+    background-color: white;
+    background-image: url(./meerkat.png);
+    background-repeat: no-repeat;
+    background-position: bottom 1px right 1px;
+    background-size: 450px 350px;
+}
+h1 {
+    width: 500px;
+    height: 80px;
+    margin: 50px; 
+    background-color: rgb(4, 72, 81);
+    color: white;
+    line-height: 80px;
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+h3 {
+    color: red;
+    margin: 40px 50px 12px;
+}
+
+ul{
+    list-style-position: inside;
+    list-style: none;
+    margin: 0px 50px 15px;
+}
+
+li {
+    font-size: 15px;
+    line-height: 160%;
+}

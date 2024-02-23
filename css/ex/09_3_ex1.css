@@ -1,0 +1,21 @@
+div {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+}
+.line-1 {
+    background: linear-gradient(45deg, white, blueviolet 30%, blue);
+}
+.circle-1 {
+    height: 50px;
+    background: radial-gradient(circle closest-corner, white, blueviolet, white);
+    /* 
+    배경은 요소의 크기에 영향을 받음
+    그럼에도 불구하고 동그랗게 만들고 싶으면 함수의 처음에 circle을 첨부 
+    */
+}
+.circle-2 {
+    height: 50px;
+    background: radial-gradient(circle at 0% 20%, white, blueviolet, white);
+    /* circle at: 0%(가로), 20%(세로)  */
+}

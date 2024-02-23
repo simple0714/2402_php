@@ -7,6 +7,9 @@ main > div {
     height: 200px;
     margin: 10px;
 }
+.dotBox2 {
+    clear: left;
+}
 footer {
     color: white;
     background-color: black;
