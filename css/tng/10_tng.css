@@ -60,6 +60,11 @@ input[type="radio"]:checked + label {
     display: none;
     position: absolute;
 }
-.test:hover + .test1 {
+.send:hover + .test1 {
     display: inline-block;
 }
+/* 
+button:hover + .test1 {
+    display: inline-block;
+}
+*/
