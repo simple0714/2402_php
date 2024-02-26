@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 20px;
+}
+fieldset {
+    padding: 15px;
+    width: 600px;
+    height: 430px;
+    background-image: url(../img/post.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+legend {
+    font-size: 30px;
+    font-weight: 900;
+    color: rgb(206, 45, 206);
+}
+
+#requset {
+    vertical-align: text-top;
+}
+/*
+label=[for='request"] {
+    vertical-align : top;
+}
+*/
+
+input, textarea {
+    background: none;
+    /* background-color: transparent */
+}
+#name::before {
+    content: '*';
+}
+.important::before {
+    content: '*';
+    color: red;
+}
+div > label {
+    font: bold;
+}
+input:focus {
+    outline: none;
+    border: 2px solid #ff0000;
+}
+textarea:focus {
+    outline: none;
+    border: 2px solid #ff0000;
+}
+input[type="radio"]:checked + label {
+    color: #ff0000;
+}
+.test1 {
+    background-color: black;
+    color: white;
+    display: none;
+    position: absolute;
+}
+.test:hover + .test1 {
+    display: inline-block;
+}

@@ -83,3 +83,6 @@ ul :nth-child(even) {
 .container1 p:nth-of-type(2){
     background-color: aqua;
 }
+input:checked +label {
+    color: blue;
+}

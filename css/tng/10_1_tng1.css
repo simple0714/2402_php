@@ -1,0 +1,47 @@
+
+.nav-container {
+    list-style-type: none;
+    display: inline-block;
+    width: 600px;
+    height: 40px;
+    border: 1px solid #c0c0c0;
+    background-color: #c0c0c0;
+    padding: 0;
+    box-shadow: 0px 10px 10px 1px black;
+}
+
+.nav1 {
+    float: left;
+    width: 99px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-right: 2px solid green;
+}
+.nav2 {
+    float: left;
+    width: 95px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+a {
+    display: block;
+}
+.nav1 a {
+    text-decoration: none;
+    color: black;
+}
+.nav2 a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav1 > a:hover {
+    background-color: #4d4d4d;
+} 
+.nav2 > a:hover {
+    background-color: red;
+    color: white
+} 

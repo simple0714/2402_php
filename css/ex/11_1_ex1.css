@@ -1,0 +1,22 @@
+div {
+    background-image: url(../img/ice_americano.jpg);
+    width: 500px;
+    height: 500px;
+    background-repeat: no-repeat;
+}
+div:hover {
+    animation: test 2s /*forwards*/;
+}
+@keyframes test {
+    from {
+        transform: translate(0)
+    }
+    to {
+        transform: translateX(200vw)
+    }
+}
+/* scale : 요소 확대 및 축소
+from { transform: scale(1);}
+to { transform: scale(2);}
+
+*/
