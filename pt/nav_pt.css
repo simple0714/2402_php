@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 2rem;
+}
+
+nav {
+    border: 1px solid black;
+    width: 602px;
+    height: 40px;
+    font-size: 0;
+}
+
+ul {
+    list-style-type: none;
+    box-shadow: 0px 5px 5px 5px #4d4d4d;
+}
+
+li{
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 40px;
+    width: 100px;
+    border-right:1px solid white;
+}
+ul > li:nth-last-child(1){
+    border-right: none;
+}
+li:not(:nth-last-child(1)):hover {
+    background-color: gray;
+}
+li:nth-last-child(1):hover {
+    background-color: white;
+    color: black;
+}
