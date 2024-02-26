@@ -8,8 +8,7 @@ body{
 }
 
 nav {
-    border: 1px solid black;
-    width: 602px;
+    width: 600px;
     height: 40px;
     font-size: 0;
 }
