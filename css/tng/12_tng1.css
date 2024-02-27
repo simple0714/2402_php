@@ -1,0 +1,22 @@
+.container {
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.item {
+    border: 1px solid #000;
+    background-color: cadetblue
+}
+
+.row-1 {
+    width: 49%;
+}
+
+.column-1 {
+    height: 32%;
+}
