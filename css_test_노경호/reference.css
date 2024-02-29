@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; 
+}
+.container {
+    display: grid;
+    grid-template-rows: 350px 1fr;
+}
+.header {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)) center;
+    background-image: url(./img/img_1.jpg);
+    background-repeat: no-repeat;
+    object-fit:cover;
+}
+
+.title {
+    display: grid;
+    align-items: center;  
+    color: white;
+    font-weight: bold;
+    font-size: 60px;
+    margin-left: 1.5rem;
+}
+.title_info {
+    display: grid;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin: auto 0;
+    margin-left: 1.5rem; 
+    padding: 1rem;
+}
+a {
+    text-decoration-line: none;
+    color: #fff;
+    font-size: 17px;
+}
+.a_color {
+    background-color: goldenrod;
+    width: 150px;
+    height: 40px;
+    border-radius: 3%;
+    text-align: center;
+    line-height: 40px;
+}
+.main_card_list {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, auto));
+    grid-row-gap: 1rem;
+}
+.card {
+    width: 348px;
+    height: 490px;
+    border: 1px solid rgb(167, 161, 161);
+    border-radius: 3%;
+}
+.card_img {
+    padding-top: 64%;
+    margin: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card_img_box {
+    position: absolute;
+    transform: translate(0%, -100%);
+    width: 315px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.6);
+    line-height: 60px;
+}
+.card_img_title {
+    color: #fff;
+}
+.card_info {
+    margin: 1rem;
+    font-weight: 900;
+}
+.visit_color {
+    background-color: goldenrod;
+    width: 1fr;
+    height: 40px;
+    border: 1px solid goldenrod;
+    border-radius: 4%;
+    text-align: center;
+    line-height: 40px;
+}
+footer {
+    height: 70px;
+    background-color: rgb(34, 33, 33);
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.footer {
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    font-size: 12px;
+}
