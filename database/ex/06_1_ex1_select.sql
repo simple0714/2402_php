@@ -195,4 +195,16 @@ WHERE to_date >= NOW()
 ORDER BY salary DESC 
 LIMIT 5;
 
+-- 8월자 생일인 사람 찾기 (개인공부)
+SELECT emp_no
+FROM employees
+WHERE 
+	(emp_no BETWEEN 10000 AND 500000)
+	AND emp_no LIKE ('%0801')
+	;
 
+SELECT 
+	emp_no, last_name, birth_date
+FROM employees
+where DATE_FORMAT(birth_date, '%m') = '08'
+;
