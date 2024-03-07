@@ -17,7 +17,6 @@ SELECT emp_no
 FROM salaries
 WHERE 
 	salary BETWEEN 60000 AND 70000
-GROUP BY emp_no
 ;
 
 
@@ -39,8 +38,7 @@ FROM titles
 
 
 -- 6. 사원 이름을 오름차순으로 정렬해서 조회해 주세요.
-SELECT DISTINCT  
-	last_name
+SELECT *
 FROM employees
 ORDER BY last_name ASC
 ;
@@ -48,7 +46,7 @@ ORDER BY last_name ASC
 -- 7. 사원별 급여의 평균을 조회해 주세요.
 SELECT 
 	emp_no
-	,AVG(salary)
+	,FLOOR (AVG(salary)) AS avg_sal
 FROM salaries
 GROUP BY emp_no
 ;
@@ -57,38 +55,30 @@ GROUP BY emp_no
 -- 8. 사원별 급여의 평균이 30,000 ~ 50,000인, 사원번호와 평균급여를 조회해 주세요.
 SELECT
 	emp_no
-	,AVG(salary)
+	,AVG(salary) avg_sal
 FROM salaries
 group by emp_no having avg(salary) BETWEEN 30000 AND 50000
 ;
 
 -- ***9. 사원별 급여 평균이 70,000이상인, 사원의 사번, 이름, 성, 성별을 조회해 주세요.
-SELECT emp_no
-FROM salaries
-WHERE emp_no IN (
-   SELECT emp_no
-   FROM employees
-   WHERE 
-         last_name IN (
-            SELECT 
-               last_name 
-            FROM 
-               employees)
-)
-GROUP BY
-   emp_no
-HAVING
-   AVG(salary) >= 70000;
+SELECT emp.emp_no, emp.first_name, emp.last_name, emp.gender
+FROM employees emp
+WHERE emp.emp_no IN (
+   SELECT sal.emp_no
+   FROM salaries sal
+   group by emp_no having AVG(sal.salary) >= 70000)
+;
     
     
 -- 10. 현재 직책이 "Senior Engineer"인, 사원의 사원번호와 성을 조회해 주세요.
 SELECT
-	emp_no
-	,first_name
-FROM employees
-WHERE emp_no IN (
+	emp.emp_no
+	,emp.last_name
+FROM employees emp
+WHERE emp.emp_no IN (
 	SELECT 
-		emp_no
-	FROM titles
-	where title = 'Senior Engineer'
+		tit.emp_no
+	FROM titles tit
+	where tit.title = 'Senior Engineer'
+		AND tit.to_date >= NOW()
 );
