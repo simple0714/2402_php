@@ -125,7 +125,7 @@ CREATE TABLE users (
 	,username 		VARCHAR(30) 		NOT NULL 
 	,authflg			CHAR(1)				DEFAULT '0'
 	,birthday		DATE 					NOT NULL 
-	,created_at		DATETIME				DEFAULT currentDate 
+	,created_at		DATETIME				DEFAULT CURRENT_DATE  
 );
 
 
