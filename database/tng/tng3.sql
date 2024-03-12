@@ -93,12 +93,13 @@ FROM
 ;
 
 -- 8.
-SELECT emp.emp_no
-		,CONCAT(emp.first_name, ' ', emp.last_name) AS NAME
-		, sal.salary
+SELECT emp.emp_no AS 사원번호
+		,CONCAT(emp.first_name, ' ', emp.last_name) AS 이름
+		, sal.salary AS 월급
 FROM employees emp
 	JOIN salaries sal 
 	ON emp.emp_no = sal.emp_no
+	AND sal.to_date >= NOW()
 WHERE sal.salary = (SELECT MAX(salary) FROM salaries)
    OR sal.salary = (SELECT MIN(salary) FROM salaries)
 ;
