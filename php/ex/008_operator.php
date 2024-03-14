@@ -72,6 +72,14 @@ echo $base_str. (string)$tng_num ."\n";
 $tng_num *=3;
 echo $base_str. (string)$tng_num ."\n";
 
+//증감 연산자 : 대상 값에 1을 더하거나 빼는 연산자
+$num = 1;
+//후위 증감 연산자
+$num++; // 1증가
+$num--; // 1감소
+// 전위 증감 연산자
+++$num; // 1증가
+--$num; // 1rkath 
 
 // 비교 연산자
 
