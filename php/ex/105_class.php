@@ -71,7 +71,10 @@ class Shark{
 }
 
 $obj_shark = new Shark("상어");
-$obj_shark->breathe();
 $obj_shark->swim("검은수염 ");
+$i = 0;
 
-Whale::big();
+while ($i <5) {
+    $obj_shark->breathe();
+    $i++;
+}
