@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    width: 834px;
+    height: 1194px;
+    box-sizing: border-box;
+    background-color: #d2ab80;
+}
+
+.gohome {
+    width: 100vw;
+    height: 100px;
+}
+h1 {
+    width: 70vw;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right:30px;
+    margin-left: 30px;
+    background-color: #e5d2b8;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 80px;
+}
