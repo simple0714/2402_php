@@ -36,3 +36,4 @@ class Child extends Parents{
 $obj = new Child("홍길동");
 $obj->car();
 $obj->getName();
+

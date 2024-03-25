@@ -2,7 +2,7 @@
 // DB접속 정보
 $dbHost     = "localhost";  //DB Host (원래는 IP주소가 들어간다.)
 $dbUser     = "root";       //DB 계정명
-$dbPw       = "php505";     //DB 패스워드
+$dbPw       = "root";     //DB 패스워드
 $dbName     = "employees";  //DB명
 $dbCharset  = "utf8mb4";    //DB charset
 $dbDsn      = "mysql:host=".$dbHost.";dbname=".$dbName.";charset=".$dbCharset; // dsn
@@ -12,7 +12,7 @@ $opt = [
     PDO::ATTR_EMULATE_PREPARES      => false //true면 php, false면 DB. 보안상의 이유로 일반적으로 false설정
     ,PDO::ATTR_ERRMODE              => PDO::ERRMODE_EXCEPTION //PDO에서 예외를 처리하는 방식을 지정
     ,PDO::ATTR_DEFAULT_FETCH_MODE   => PDO::FETCH_ASSOC //DB의 결과를 저장하는 방식을 지정
-    // PDO::FETCH_ASSOC : 연상배열로 데이터 fetch
+    // PDO::FETCH_ASSOC : 연상배열로 데이터 fetch6
     // PDO::FETCH_OBJ : stdClass객체로 데이터 fetch
 ];
 $conn = new PDO($dbDsn, $dbUser, $dbPw, $opt);
