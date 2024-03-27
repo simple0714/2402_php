@@ -3,8 +3,123 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
+.test {
+    width: 834px;
+    /* height: 1194px; */
+    border: 1px solid #ece4d8 ;
+    margin: 5vh auto 5vh auto;
+}
+
+.main_body {
+    display: flex;
+    flex-direction : column;
+    justify-content: space-around;
+    align-items: center;
     width: 834px;
     height: 1194px;
-    border: 1px solid #e5d2b8 ;
+    background-color: #ece4d8;
 }
+
+.main_head {
+    height : 120px;
+    width : 700px;
+    /* border: 1px solid black; */
+    margin: 1rem auto;
+    background-image: url(../image/head_image.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.doit {
+    font-size: 3rem;
+    text-align: center;
+    line-height: 80px;
+}
+
+.nav_container {
+    height : 120px;
+    width : 700px;
+    /* border: 1px solid black; */
+    margin: 1rem auto;
+    display: grid;
+    justify-content : space-around;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+
+}
+.container_box {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 110px;
+    height: 110px;
+    border: 1px solid #fffbeb;
+    border-radius: 10px;
+    background-color: #fffbeb;
+    /* padding: 30px; */
+}
+
+.image_box {
+    /* width: 60px; 
+    height: 60%; */
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+
+main {
+    height : 850px;
+    width : 700px;
+    border: 1px solid #E1D2BB;
+    margin: 1rem auto;
+    background-color: #E1D2BB;
+    border-radius: 10px;
+}
+
+.main_midle {
+    height : 80px;
+    border-bottom: 1px solid black;
+    margin: 0 50px;
+    
+}
+.tasks {
+    font-size: 3rem ;
+    font-weight: 900;
+    text-align: center;
+    line-height: 70px;
+}
+
+/* .list_box {
+    width: auto;
+    height: 100%;
+    background-image: url(../image/free-icon-font-ballot-7653160.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.book_box {
+    width: auto;
+    height: 100%;
+    background-image: url(../image/free-icon-font-book-open-cover-7720118.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.date_box{
+    width: auto;
+    height: 100%;
+    background-image: url(../image/free-icon-font-calendar-clock-7602606.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.save_box {
+    width: auto;
+    height: 100%;
+    background-image: url(../image/free-icon-font-piggy-bank-7653269.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+} */

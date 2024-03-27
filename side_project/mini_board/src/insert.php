@@ -20,6 +20,7 @@ if(REQUEST_METHOD === "POST") {
         if(count($arr_err_param) > 0) {
             // 예외처리
             throw new Exception("parameter Error : ".implode(", ", $arr_err_param));
+            //implode : 구문을 연결시켜주는 함수
         }
 
         //DB connect
