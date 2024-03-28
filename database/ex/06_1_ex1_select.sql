@@ -54,7 +54,7 @@ WHERE
 SELECT *
 FROM employees
 WHERE 
-   	first_name = 'Mary'
+   	first_name = '홍길동	'
 	AND last_name = 'Piazza';
 -- 이름이 Mary 또는 Moto이고, 성이 Piazza 인 사원의 정보 조회
 SELECT *

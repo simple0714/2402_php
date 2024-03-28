@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To do list</title>
+    <title>작성하기</title>
     <link rel="stylesheet" href="../css/wantgohome.css">
 </head>
 <body>
@@ -16,56 +16,42 @@
         </header>
         <div class="nav_container">
             <div class="container_box">
-                <a href="./index.html" >
+                <a href="./list_all.html" >
                     <img class= "image_box"src="../image/free-icon-font-ballot-7653160.png"/>
                 </a>
             </div>
             <div class="container_box">
-                <a href="./index.html">
+                <a href="./list_all.html">
                     <img class= "image_box" src="../image/free-icon-font-book-open-cover-7720118.png" />
                 </a>
             </div>
             <div class="container_box">
-                <a href="./index.html">
+                <a href="./list_all.html">
                     <img class= "image_box" src="../image/free-icon-font-calendar-clock-7602606.png"  />
                 </a>
             </div>
             <div class="container_box">
-                <a href="./index.html">
+                <a href="./list_all.html">
                     <img class= "image_box" src="../image/free-icon-font-piggy-bank-7653269.png" />
                 </a>
             </div>
         </div>
         <main>
-            <div class="main_midle">
-                <p class="tasks">today tasks</p>
-            </div>
-            <div class="main_nav_list">
-                <a href="./index.html">all</a>
-                <a href="./index.html">completed</a>
-                <a href="./index.html">uncompleted</a>
-            </div>
-            <div class="item_list">
-                <div class="item">
-                    <p>테스트입니다.</p>
-                    <br>
-                    <input type="checkbox" name="done">
+            <div class="insert_page_main">
+                <div class="write">
+                    <label for="insert_text" >목표를 작성해주세요</label>
                 </div>
-                <div class="item">
-                    <p>테스트입니다.</p>
-                    <br>
-                    <input type="checkbox" name="done">
+                <div>
+                    <textarea name="" id="insert_text" class="write_here"></textarea>
                 </div>
-                <div class="item">
-                    <p>테스트입니다.</p>
-                    <br>
-                    <input type="checkbox" name="done">
-                </div>
-                <div class="item">
-                    <p>테스트입니다.</p>
-                    <br>
-                    <input type="checkbox" name="done">
-                </div>
+                <div class="insert_button_list">
+                    <div class="insert_button">
+                        <a href="./list_all.html" class="insert_button">등록하기</a>
+                    </div>
+                    <div class="cancel_button">
+                        <a href="./list_all.html" class="cancel_button">취소</a>
+                    </div>
+                </div>  
             </div>
         </main>
         </div>

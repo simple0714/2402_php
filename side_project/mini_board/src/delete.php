@@ -77,7 +77,7 @@ try {
         exit;
     }
 } catch (\Throwable $e) {
-    if(!empty($conn)) {
+    if(!empty($conn) && $conn->inTransaction()) {
         $conn->rollBack();
     }
     echo $e->getMessage();
@@ -112,19 +112,19 @@ try {
         <div class="main_middle">
             <div class="line_item">
               <div class="line_title">게시글 번호</div>
-              <div class="line_content"><?php echo $item["no"] ?></div>
+              <div class="line_content"><?php echo $item["no"]; ?></div>
             </div>
             <div class="line_item">
               <div class="line_title">제목</div>
-              <div class="line_content"><?php echo $item["title"] ?></div>
+              <div class="line_content"><?php echo $item["title"]; ?></div>
             </div>
             <div class="line_item">
               <div class="line_title">내용</div>
-              <div class="line_content"><?php echo $item["content"] ?></div>
+              <div class="line_content"><?php echo $item["content"]; ?></div>
             </div>
             <div class="line_item">
               <div class="line_title">작성일자</div>
-              <div class="line_content"><?php echo $item["created_at"] ?></div>
+              <div class="line_content"><?php echo $item["created_at"]; ?></div>
             </div>
         </div>
         <form action="./delete.php" method="post">

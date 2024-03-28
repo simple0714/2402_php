@@ -10,6 +10,10 @@
     margin: 5vh auto 5vh auto;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .main_body {
     display: flex;
     flex-direction : column;
@@ -20,7 +24,7 @@
     background-color: #ece4d8;
 }
 
-.main_head {
+.main_head {  
     height : 120px;
     width : 700px;
     /* border: 1px solid black; */
@@ -76,11 +80,17 @@ main {
     margin: 1rem auto;
     background-color: #E1D2BB;
     border-radius: 10px;
+    position: relative;
 }
-
+.insert_page_main {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    /* border는 임시 확인용 */
+}
 .main_midle {
     height : 80px;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     margin: 0 50px;
     
 }
@@ -90,36 +100,94 @@ main {
     text-align: center;
     line-height: 70px;
 }
+.main_nav_list {
+    height : 80px;
+    display: grid;
+    justify-content : space-around;
+    grid-template-columns: 0.3fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
 
-/* .list_box {
-    width: auto;
-    height: 100%;
-    background-image: url(../image/free-icon-font-ballot-7653160.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.list_text {
+    font-size: 2rem ;
+    text-decoration-line: none;
+    color: inherit;
+    padding: 10%;
 }
-.book_box {
-    width: auto;
-    height: 100%;
-    background-image: url(../image/free-icon-font-book-open-cover-7720118.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.item {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 10px;
+    background-color: #fffbeb;
+    border-radius: 10px;
+    margin: 10px 2rem;
 }
-.date_box{
-    width: auto;
-    height: 100%;
-    background-image: url(../image/free-icon-font-calendar-clock-7602606.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+
+.write {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
 }
-.save_box {
-    width: auto;
-    height: 100%;
-    background-image: url(../image/free-icon-font-piggy-bank-7653269.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-} */
+.write_here {
+    resize: none;
+    width: 90%;
+    height: 10rem;
+    border: none;
+    border-radius: 10px;
+    margin: 0 5% 0 5%;
+    background-color: #FFFBEB;
+}
+.button_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    
+    
+}
+
+.button_list {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+.insert_button_list {
+    margin-top : 10rem;
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: space-around;
+}
+.insert_button {
+    width: 200px;
+    height: 80px;
+    background-color: #fffbeb;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 36px;
+}
+.cancel_button {
+    width: 200px;
+    height: 80px;
+    background-color: #fffbeb;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 36px;
+}
+.under_button {
+    width: 100px;
+    height: 50px;
+    background-color: #fffbeb;
+    border-radius: 10px;
+    margin-left: 10px;
+    text-align: center;
+    line-height: 48px;
+}
+.done {
+    grid-column: 3/4;
+}
