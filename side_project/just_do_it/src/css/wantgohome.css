@@ -114,6 +114,10 @@ main {
     text-decoration-line: none;
     color: inherit;
     padding: 10%;
+    color: #859572;
+}
+.now_page {
+    color: #8D651F;
 }
 .item {
     width: 90%;
@@ -125,13 +129,41 @@ main {
     background-color: #fffbeb;
     border-radius: 10px;
     margin: 10px 2rem;
+    
 }
-
+.item_title {
+    display: block;
+}
+.detail_title {
+    width: 90%;
+    height: 4rem;
+    background-color: #FFFBEB;
+    margin: 0 5% 0 5%;
+    border-radius: 10px;
+    font-size: 30px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+.in_detail_title {
+    display: inline-block;
+    margin : 0 3rem 0 3rem;
+    /* margin-right: 3rem;
+    margin-left: 3rem; */
+}
 .write {
+    width: 90%;
+    height: 4rem;
+    background-color: #FFFBEB;
+    margin: 0 5% 0 5%;
+    border-radius: 10px;
     font-size: 30px;
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    line-height: 4rem;
 }
 .write_here {
     resize: none;
@@ -141,6 +173,12 @@ main {
     border-radius: 10px;
     margin: 0 5% 0 5%;
     background-color: #FFFBEB;
+    font-size: 26px;
+}
+.detail_content {
+    background-color: #FFFBEB;
+    font-size: 26px;
+    margin: 0 1rem;
 }
 .button_list {
     display: grid;
@@ -152,7 +190,7 @@ main {
 .button_list {
     position: absolute;
     bottom: 1rem;
-    right: 1rem;
+    right: 2.7rem;
 }
 .insert_button_list {
     margin-top : 3rem;
@@ -162,7 +200,16 @@ main {
     justify-content: space-around;
 }
 .insert_button {
-    width: 200px;
+    width: 150px;
+    height: 80px;
+    background-color: #fffbeb;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 36px;
+}
+.delete_button {
+    width: 150px;
     height: 80px;
     background-color: #fffbeb;
     border-radius: 10px;
@@ -171,7 +218,7 @@ main {
     font-size: 36px;
 }
 .cancel_button {
-    width: 200px;
+    width: 150px;
     height: 80px;
     background-color: #fffbeb;
     border-radius: 10px;
@@ -191,6 +238,10 @@ main {
     text-align: center;
     line-height: 48px;
 }
-.done {
-    grid-column: 3/4;
+.add {
+    grid-column: 5/6;
+}
+.button:hover {
+    background-color: #F4E6AE;
+    border-radius: 10px;
 }

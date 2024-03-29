@@ -97,7 +97,8 @@ WHERE id = 1
 ;
 
 -- 7번 문제
-DROP TABLE wishlists;
+-- DROP TABLE wishlists;
+TRUNCATE TABLE users;
 
 -- 8번 문제
 DROP DATABASE NEW;
