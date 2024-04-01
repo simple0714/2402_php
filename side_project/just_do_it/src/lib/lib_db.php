@@ -39,7 +39,7 @@ function db_select_boards_no(&$conn, &$array_param) {
         ." FROM	 "
         ." 	boards "
         ." WHERE	 "
-        ." 	user_no = :user_no "
+        ." 	board_no = :board_no "
         ;
    //Query 실행
    $stmt  = $conn->prepare($sql);
@@ -126,6 +126,30 @@ function db_select_boards_uncompleted(&$conn, &$array_param) {
     //리턴
     return $result;
 }
+
+//■ Insert row to boards 게시판 테이블 레코드 작성처리
+function db_insert_boards(&$conn, &$array_param) {
+    $sql =
+        " INSERT INTO boards( "
+        ." user_no "
+        ." ,title "
+        ." ,content "
+        ." ) "
+        ." VALUES( "
+        ." 1 "
+        ." ,:title "
+        ." ,:content "
+        ." ) "
+        ;
+
+    //Query 실행
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($array_param);
+
+
+    //리턴
+    return $stmt->rowCount();
+}					
 
 
 

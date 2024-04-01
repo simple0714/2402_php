@@ -16,7 +16,7 @@ try {
     $result_board_cnt = db_select_boards_cnt($conn);
 
     //페이지 관련 설정 세팅
-    $max_page_num = ceil($result_board_cnt / $list_cnt);                 // 최대 페이지 수
+    $max_page_num = ceil($result_board_cnt / $list_cnt);                // 최대 페이지 수
     $offset = $list_cnt * ($page_num - 1);                              // 오프셋
  
     //페이징
@@ -101,7 +101,7 @@ try {
                     foreach($result as $item) {
                         ?>
                     <div class="item">
-                        <div class="item_title"><a href="./detail.php?no=<?php echo $item["board_no"] ?>&page=<?php echo $page_num ?>"><?php echo $item["title"] ?></a></div>
+                        <div class="item_title"><a href="./detail.php?board_no=<?php echo $item["board_no"] ?>&page=<?php echo $page_num ?>"><?php echo $item["title"] ?></a></div>
                         <div class="item_createdat"><?php echo $item["created_at"] ?></div>
                     </div>
                     <?php

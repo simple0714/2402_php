@@ -150,20 +150,34 @@ main {
 .in_detail_title {
     display: inline-block;
     margin : 0 3rem 0 3rem;
-    /* margin-right: 3rem;
-    margin-left: 3rem; */
+    overflow: hidden;
 }
-.write {
-    width: 90%;
+input[type="text"] {
+    width: 100%;
     height: 4rem;
     background-color: #FFFBEB;
-    margin: 0 5% 0 5%;
     border-radius: 10px;
+    border: transparent;
     font-size: 30px;
     text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    line-height: 4rem;
+    outline: none;
+    border: none;
+}
+textarea {
+    resize: none;
+    width: 90%;
+    height: 35rem;
+    border: none;
+    border-radius: 10px;
+    margin: 0 5% 0 5%;
+    background-color: #FFFBEB;
+    font-size: 26px;
+    outline: none;
+    border: none;
+}
+.content_box {
+    display: flex;
+    justify-content: center;
 }
 .write_here {
     resize: none;
@@ -174,6 +188,8 @@ main {
     margin: 0 5% 0 5%;
     background-color: #FFFBEB;
     font-size: 26px;
+    outline: none;
+    border: none;
 }
 .detail_content {
     background-color: #FFFBEB;
@@ -207,6 +223,17 @@ main {
     text-align: center;
     line-height: 80px;
     font-size: 36px;
+}
+button {
+    width: 150px;
+    height: 80px;
+    background-color: #fffbeb;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 36px;
+    outline: none;
+    border: none;
 }
 .delete_button {
     width: 150px;
@@ -242,6 +269,10 @@ main {
     grid-column: 5/6;
 }
 .button:hover {
+    background-color: #F4E6AE;
+    border-radius: 10px;
+}
+button:hover {
     background-color: #F4E6AE;
     border-radius: 10px;
 }
