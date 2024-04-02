@@ -2,9 +2,9 @@
 //설정 정보
 require_once($_SERVER["DOCUMENT_ROOT"]."/config.php");  // 설정 파일 호출
 require_once(FILE_LIB_DB);                              // DB관련 라이브러리
-$list_cnt = 5;                                          // 한 페이지 최대 표시 수
+$list_cnt = 10;                                          // 한 페이지 최대 표시 수
 $page_num = 1;                                          // 페이지 번호 초기화
-$btn_page_cnt = 5;
+$btn_page_cnt = 10;
 
 
 try {
@@ -56,7 +56,7 @@ try {
         <div class="main_body">
         <header>
             <div class="main_head">
-                <h1 class="doit">Just do it</h1>
+                <a href="./list_all.php" class="doit">Just do it</a>
             </div>
         </header>
         <div class="nav_container">

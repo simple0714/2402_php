@@ -68,7 +68,7 @@ if(REQUEST_METHOD === "POST") {
         <div class="main_body">
         <header>
             <div class="main_head">
-                <h1 class="doit">Just do it</h1>
+                <a href="./list_all.php" class="doit">Just do it</a>
             </div>
         </header>
         <div class="nav_container">
@@ -114,7 +114,7 @@ if(REQUEST_METHOD === "POST") {
                             document.getElementById("submitButton").addEventListener("click", function() {
                                 // 버튼이 클릭되었을 때 border를 제거
                                 this.style.border = "none";
-                            });
+                            }); 
                             </script>
                         </div>
                         <div class="cancel_button">

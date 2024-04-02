@@ -36,9 +36,11 @@ a{
 }
 
 .doit {
-    font-size: 3rem;
+    display: block;
     text-align: center;
     line-height: 80px;
+    font-size: 3rem;
+    font-weight: 900;
 }
 
 .nav_container {
@@ -152,6 +154,7 @@ main {
     margin : 0 3rem 0 3rem;
     overflow: hidden;
 }
+
 input[type="text"] {
     width: 100%;
     height: 4rem;

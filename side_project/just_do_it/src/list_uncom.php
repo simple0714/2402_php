@@ -56,7 +56,7 @@ try {
         <div class="main_body">
         <header>
             <div class="main_head">
-                <h1 class="doit">Just do it</h1>
+                <a href="./list_all.php" class="doit">Just do it</a>
             </div>
         </header>
         <div class="nav_container">
@@ -93,7 +93,7 @@ try {
                     <a href="./list_com.php" class="list_text a_com" >completed</a>
                 </div>
                 <div class="nav_list_box">
-                    <a href="./list_uncom.php" class="list_text a_uncom  now_page">uncompleted</a>
+                    <a href="./list_uncom.php" class="list_text a_uncom now_page">uncompleted</a>
                 </div>
             </div>
             <div class="item_list">
@@ -101,7 +101,7 @@ try {
                     foreach($result as $item) {
                         ?>
                     <div class="item">
-                        <div class="item_title"><a href="./detail.php?no=<?php echo $item["board_no"] ?>&page=<?php echo $page_num ?>"><?php echo $item["title"] ?></a></div>
+                        <div class="item_title"><a href="./detail.php?board_no=<?php echo $item["board_no"] ?>&page=<?php echo $page_num ?>"><?php echo $item["title"] ?></a></div>
                         <div class="item_createdat"><?php echo $item["created_at"] ?></div>
                     </div>
                     <?php

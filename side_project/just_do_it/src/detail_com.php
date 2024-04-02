@@ -50,59 +50,6 @@ try {
     }
 }
 
-if(REQUEST_METHOD === "POST") {
-
-	try {
-		//파라미터 획득
-		$no = isset($_POST["board_no"]) ? trim($_POST["board_no"]) : "";       
-		$page = isset($_POST["page"]) ? trim($_POST["page"]) : "";      
-
-		// 파라미터 에러 체크
-        $arr_err_param = [];
-        if($no === "") {
-            $arr_err_param[] = "no";
-        }
-        if($page === "") {
-            $arr_err_param[] = "page";
-        }
-        if(count($arr_err_param) > 0) {
-            throw new Exception("parameter Error : ".implode(", ",$arr_err_param));
-        }
-
-        //DB connect
-        $conn = my_db_conn();  //PDO 인스턴스
-        //Transaction
-        $conn->beginTransaction();
-        //게시글 작성 처리
-        $arr_param = [
-            "board_no" => $no
-        ];
-        $result = db_insert_tasks($conn, $arr_param);
-        // $arr_param 다시 넣거 todo
-
-        //글 작성 예외처리
-        if($result !== 1) {
-            throw new Exception("Insert Boards count");
-        }
-        //커밋
-        $conn->commit();
-        //리스트 페이지로 이동
-        header("Location: list_all.php?board_no={$no}&page={$page}");
-        exit;
-    } catch (\Throwable $e) {
-        if(!empty($conn) && $conn->inTransaction()) {
-            $conn->rollBack();
-        }
-        echo $e->getMessage();
-        exit;
-    } finally {
-        if(!empty($conn)) {
-            $conn = null;
-        }
-    }
-}
-
-
 ?>
 
 <!DOCTYPE html>
@@ -144,7 +91,6 @@ if(REQUEST_METHOD === "POST") {
             </div>
         </div>
         <main>
-        <form action="./detail.php?board_no=<?php echo $no; ?>&page=<?php echo $page; ?>" method="POST">
             <input type="hidden" name="board_no" value="<?php echo $item["board_no"]; ?>">
             <input type="hidden" name="page" value="<?php echo $page; ?>">
             <div class="insert_page_main">
@@ -161,19 +107,6 @@ if(REQUEST_METHOD === "POST") {
                     <div class="insert_button">
                     <a href="./update.php?board_no=<?php echo $item["board_no"]; ?>&page=<?php echo $page; ?>" class="button_in button">수정하기</a>
                     </div>
-                    <!-- <form action="./detail.php" method="post"> -->
-                    <div>
-                        <input type="hidden" name="board_no" value="<?php echo $item["board_no"]; ?>">
-                        <button type="submit" id="submitButton">완료하기</button>
-                            <script>
-                            // JavaScript를 사용하여 버튼 클릭 이벤트를 처리
-                            document.getElementById("submitButton").addEventListener("click", function() {
-                                // 버튼이 클릭되었을 때 border를 제거
-                                this.style.border = "none";
-                            }); 
-                            </script>
-                    </div>
-                    <!-- </form> -->
                     <div class="delete_button">
                         <a href="./delete.php" class="button_in button">삭제하기</a>
                     </div>
@@ -182,7 +115,6 @@ if(REQUEST_METHOD === "POST") {
                     </div>
                 </div>  
             </div>
-        </form>
         </main>
         </div>
     </div>
