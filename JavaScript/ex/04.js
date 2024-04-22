@@ -61,11 +61,12 @@ function myBlock() {
 
 // 호이스팅 (hoisting)
 // 인터프리터가 변수와 함수의 메모리 공간을 선언 전에 미리 할당 한는 가
-console.log(test);
-test = "abc";
-console.log(test);
+// console.log(test);
+// test = "abc";
+// console.log(test);
 
-var test;
+// var test;
+// var로 선언시 에러가 나지 않음. 그래서 let이나 const를 쓰자.
 
 //데이터 타입
 // number 숫자 
@@ -95,6 +96,8 @@ console.log(typeof obj);
 let arr = [1, 2, 3];
 
 // symbol 심볼
+// 고유한 값을 만드는 자바스크립트 객체
+// 자바스크립트로 백엔드 작업까지 하게 될 경우 많이 사용한다고 한다. 프론트에서는 잘 사용하지 않음.
 let letStr1 = '심볼1';
 let letStr2 = '심볼1';
 let letSymbol1 = Symbol('심볼1');
