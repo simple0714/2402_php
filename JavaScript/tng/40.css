@@ -13,5 +13,20 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* 요소를 가운데 정렬합니다. */
+}
+.busted {
+    
+}
+
+
+/* 강사님 코드
+.container {
+    background-color
+    top : 300px;
+    left : 300px;
 
 }
+
+
+
+*/
