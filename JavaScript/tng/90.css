@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    height: 100px;
+    background-color: black;
+}
+
+h1{
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 200%;
+}
+.btn_box{
+    width: 400px;
+    margin: auto;
+}
+#input-url{
+    width: 350px;
+}
+button{
+    margin-right: 3px;
+}
+
+.img-container{
+    margin: 1rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+}
+.img-box{
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+    margin: 10px;
+}
+#img_id{
+    font-weight: 900;
+    text-align: center;
+    padding: 5px;
+
+}
+.img{
+    text-align: center;
+    margin: 5px;
+    width: 190px;
+    height: 150px;
+}
