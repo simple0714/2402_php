@@ -49,3 +49,19 @@ BTN_DEL.addEventListener('click', () => {
     const DEL = document.querySelector('.img-container')
     DEL.textContent = "";
 });
+
+//마지막으로 추가된 5개의 이미지를 삭제하는 함수
+function deleteLastFiveImages() {
+    const imgContainer = document.querySelector('.img-container');
+    const imgBoxes = imgContainer.querySelectorAll('.img-box');
+    console.log(imgBoxes.length)
+    
+    // 마지막으로 추가된 5개의 이미지를 삭제
+    const numberOfImagesToDelete = Math.min(5, imgBoxes.length);
+    for (let i = 0; i < numberOfImagesToDelete; i++) {
+        imgContainer.removeChild(imgBoxes[imgBoxes.length - 1 - i]);
+    }
+}
+
+const BTN_DEL5 = document.querySelector('#btn-api-5del');
+BTN_DEL5.addEventListener('click', deleteLastFiveImages);
