@@ -36,6 +36,11 @@ class Router {
             if($httpMethod === "GET"){
                 new BoardController("listGet");
             }
+        } else if($url === "user/logout"){
+            //로그아웃 처리
+            if($httpMethod === "GET"){
+                new UserController("logoutGet");
+            }
         }
         
         //예외처리

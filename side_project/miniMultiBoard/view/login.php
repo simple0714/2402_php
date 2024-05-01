@@ -17,8 +17,12 @@
     </header>
 
     <main class="d-flex justify-content-center align-items-center h-75">
-        <form action="/user/login" method="post">
-            <div class="form-text text-danger">에러에러에러</div>
+        <form style= "width:300px" action="/user/login" method="post">
+            <?php
+                foreach($this->arrErrorMsg as $val) {
+                    echo '<div class="form-text text-danger">'.$val.'</div>';
+                }
+            ?>
             <label for="u_email" class="form-label">이메일</label>
             <input type="text" class="form-control mb-3" id="u_email" name="u_email">
             <label for="u_pw" class="form-label">비밀번호</label>
