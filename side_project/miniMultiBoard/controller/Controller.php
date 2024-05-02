@@ -1,9 +1,13 @@
 <?php
 namespace controller;
 
+use model\BoardsnameModel;
+
 class Controller {
     protected $arrErrorMsg =[];     //화면에 표시할 에러 메세지 리스트
-    
+    protected $arrBoardsNameInfo = []; //헤더 게시판 드롭다운 리스트
+    protected $boardName =""; //게시판 이름
+
     //비로그인시 접속 불가능한 URL 리스트
     private $arrNeedAuth = [
         "board/list"
@@ -19,6 +23,11 @@ class Controller {
 
         //유저 로그인 및 권한 체크
         $this->chkAuthorization();
+
+        //헤더 드롭다운 리스트 획득
+        $modelBoardsname = new BoardsnameModel();
+        $this->arrBoardsNameInfo = $modelBoardsname->getBoardsnameList();
+        $modelBoardsname->destroy();
 
         //해당 action 호출
         $resultAction = $this->$action();
