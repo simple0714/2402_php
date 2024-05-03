@@ -10,37 +10,11 @@
     <link rel="stylesheet" href="/view/css/bootstrap/bootstrap.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/view/js/board.js" defer></script>
-    <script src="/view/js/bootstrap.js" defer></script>
+    <script src="/view/js/bootstrap/bootstrap.js" defer></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">MINI board</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  게시판
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                  <?php
-                    foreach($this->arrBoardsNameInfo as $item) {
-                  ?>
-                  <li><a class="dropdown-item" href="/board/list?b_type=<?php echo $item["b_type"]?>"><?php echo $item["bn_name"]?></a></li>
-                  
-                  <?php
-                    }
-                  ?>
-                </ul>
-              </li>
-            </ul>
-            <a href="/user/logout" class="navbar-nav nav-link text-light" role="button">로그아웃</a>
-          </div>
-        </div>
-      </nav>
+    <!-- 헤더 -->
+    <?php require_once("view/inc/header.php")?>
 
     <div class="text-center mt-5 mb-5">
         <h1>
@@ -53,8 +27,7 @@
         class="bi bi-plus-circle-fill" 
         viewBox="0 0 16 16" 
         data-bs-toggle="modal" 
-        data-bs-target="#modalInsert"
-    >
+        data-bs-target="#modalInsert">
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
         </svg>
     </div>
@@ -64,8 +37,14 @@
     <?php
       foreach($this->arrBoardList as $item) {
     ?>
-      <div class="card">
-          <img src="<?php echo $item["b_img"];?>" class="card-img-top" alt="고양이">
+      <div class="card" id="card<?php echo $item["b_id"]?>">
+          <?php
+            if(!empty($item["b_img"])) {
+          ?>
+          <img src="<?php echo $item["b_img"];?>" class="card-img-top" alt="">
+          <?php
+          }
+          ?>
           <div class="card-body">
               <h5 class="card-title"><?php echo $item["b_title"];?></h5>
               <p class="card-text"><?php echo $item["b_content"];?></p>
@@ -96,9 +75,13 @@
             <div class="modal-body">
               <p></p>
               <br>
-              <img src="" class="card-img-top" alt="">
+              <img src="" class="card-img-top" >
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer justify-content-between">
+              <div>
+                <button id="my-btn-delete" type="button" class="btn btn-secondary">삭제</button>
+                <button id="my-btn-update" type="button" class="btn btn-secondary">수정</button>
+              </div>
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
             </div>    
             </form>

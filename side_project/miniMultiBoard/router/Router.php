@@ -51,6 +51,18 @@ class Router {
             if($httpMethod === "GET") {
                 new BoardController("detailGet");
             }
+        } else if($url === "user/regist") {
+            //회원가입 페이지
+            if($httpMethod === "GET") {
+                new UserController("registGet");
+            } else {
+                new Usercontroller("registPost");
+            }
+        } else if($url === "user/email") {
+            //이메일 중복 체크
+            if($httpMethod === "POST") {
+                new UserController("chkEmailPost");
+            }
         }
         
         //예외처리
