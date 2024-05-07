@@ -63,6 +63,18 @@ class Router {
             if($httpMethod === "POST") {
                 new UserController("chkEmailPost");
             }
+        } else if($url === "board/delete") {
+            //게시글 삭제 처리
+            if($httpMethod === "POST") {
+                new BoardController("deletePost");
+            }
+        } else if($url === "user/update") {
+            //회원정보 수정
+            if($httpMethod === "GET") {
+                new UserController("updateUserGet");
+            } else {
+                new UserController("updateUserPost");
+            }
         }
         
         //예외처리

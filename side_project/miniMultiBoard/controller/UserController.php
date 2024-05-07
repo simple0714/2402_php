@@ -110,7 +110,7 @@ class UserController extends Controller {
             "u_email" => $_POST["u_email"]
         ];
 
-        //response 데이터 
+        //response 데이터 초기화
         $responseArr = [
             "errorFlg" => false
             ,"errorMsg" => ""
@@ -146,5 +146,62 @@ class UserController extends Controller {
         return base64_encode($pw.$pk);
     }
 
+    //회원정보수정 페이지 이동
+    public function updateUserGet() {
+        $requestData = [
+            "u_id" => $_SESSION["u_id"]
+        ];
+        $modelUsers = new UsersModel();
+        $resultUserInfo = $modelUsers->getUserInfo($requestData);
+        $_SESSION['uname'] = $resultUserInfo;
+
+        // var_dump($_SESSION);
+        return "updateUser.php";
+    }
+    //회원정보 수정처리
+    public function updateUserPost() {
+        $requestData = [
+            "u_id" => $_SESSION["u_id"]
+        ];
+        $modelUsers = new UsersModel();
+        $resultUserInfo = $modelUsers->getUserInfo($requestData);
+
+        $checkedData = [
+            "u_name" => $_POST["u_name"]
+            ,"u_pw" => $_POST["u_pw"]
+            ,"chk_u_pw" => $_POST["chk_u_pw"]
+            ,"u_id" => $_SESSION["u_id"]
+        ];
+
+        $requestData = [
+            "u_name" => $_POST["u_name"]
+            ,"u_pw" => $_POST["u_pw"]
+            ,"u_id" => $_SESSION["u_id"]
+        ];
+        
+        //유효성 체크
+        $resultValidator = UserValidator::chkValidator($checkedData);
+        if(count($resultValidator) > 0) {
+            $this->arrErrorMsg = $resultValidator;
+            return "updateUser.php";
+        }
+        
+        //비밀번호 암호화
+        $requestData["u_pw"] =$this->encryptionPassword($requestData["u_pw"],  $resultUserInfo["u_email"]);
+    
+        //회원 정보 업데이트 처리
+        $modelUsers->beginTransaction();
+        $resultUserInsert = $modelUsers->updateUserInfo($requestData);
+
+        if($resultUserInsert === 1){
+            $modelUsers->commit();
+        } else {
+            $modelUsers->rollBack();
+            $this->arrErrorMsg=["회원수정에 실패했습니다."];
+            return "boardList.php";
+        }
+
+        return "Location: /board/list";
+    }
 
 }

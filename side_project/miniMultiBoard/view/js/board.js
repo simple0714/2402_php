@@ -1,3 +1,4 @@
+//상세 모달 처리
 document.querySelectorAll(".my-btn-detail").forEach(item => {
     item.addEventListener('click', () => {
         const url = '/board/detail?b_id=' + item.value;
@@ -37,3 +38,30 @@ document.querySelectorAll(".my-btn-detail").forEach(item => {
         .catch(err => console.log(err));
     });
 });
+
+//삭제 처리(async로 작성해보기)
+document.querySelector('#my-btn-delete').addEventListener('click', myDeleteCard);
+
+async function myDeleteCard(e) {
+    const url = '/board/delete'; //url설정
+
+    const data = new FormData(); //form설정
+    data.append('b_id', e.target.value);
+    try {
+        const responese = await axios.post(url, data);
+        console.log(responese.data);
+
+        if(responese.data.errorFlg) {
+            //에러일 경우 처리 
+            alert('삭제 실패 했습니다');
+        } else {
+            //정상일 경우
+            const main =document.querySelector('main'); // 부모요소
+            const card = document.querySelector('#card' + responese.data.b_id); //삭제할 요소 
+            main.removeChild(card);
+            
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}

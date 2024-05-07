@@ -2,6 +2,7 @@
 namespace model;
 
 class BoardsModel extends Model {
+    //게시글 전체 조회
     public function getBoardList(array $paramArr) {
         try{
             $sql =
@@ -14,6 +15,7 @@ class BoardsModel extends Model {
                 ." boards "
                 ." WHERE "
                 ." b_type = :b_type "
+                ." AND deleted_at is null "
                 ." ORDER BY "
                 ." b_id DESC "
                 ;
@@ -80,6 +82,28 @@ class BoardsModel extends Model {
             return $result;
         } catch (\Throwable $th) {
             echo "BoardsModel -> getBoard(), ".$th->getMessage();
+            exit;
+        }
+    }
+
+    //삭제 처리
+    public function deleteBoard($paramArr) {
+        try {
+            $sql = 
+                " UPDATE boards "
+                ." SET "
+                ." deleted_at = NOW() "
+                ." WHERE "
+                ." b_id = :b_id "
+                ." AND u_id = :u_id"
+            ;
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($paramArr);
+
+            return $stmt->rowCount();
+        } catch (\Throwable $th) {
+            echo "BoardsModel -> dlelteBoard(), ".$th->getMessage();
             exit;
         }
     }

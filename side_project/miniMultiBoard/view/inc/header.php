@@ -2,7 +2,7 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="#">MINI board</a>
           <?php
-            if($_GET["url"] !== "user/login" && $_GET["url"] !== "user/regist"){
+            if($_GET["url"] !== "user/login" && $_GET["url"] !== "user/regist" ){
           ?>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,10 +20,11 @@
                   <li><a class="dropdown-item" href="/board/list?b_type=<?php echo $item["b_type"]?>"><?php echo $item["bn_name"]?></a></li>
                   <?php
                     }
-                  ?>
+                    ?>
                 </ul>
-                </li>
-                </ul>
+              </li>
+            </ul>
+            <a href="/user/update" class="navbar-nav nav-link text-light" role="button">회원정보 수정</a>
             <a href="/user/logout" class="navbar-nav nav-link text-light" role="button">로그아웃</a>
           </div>
           <?php

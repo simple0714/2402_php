@@ -25,6 +25,12 @@ class UserValidator {
                 $arrErrorMsg[] = "비밀번호는 영어 대소문자 및 숫자, 특수문자(!,@) 8~20로 작성해주세요";
             }
         }
+        //패스워드 일치 체크
+        if(array_key_exists("u_pw",$param_arr) && array_key_exists("chk_u_pw",$param_arr)) {
+            if($param_arr["u_pw"] !== $param_arr["chk_u_pw"]) {
+                $arrErrorMsg[] = "비밀번호가 일치하지 않습니다.";
+            }
+        }
 
         //이름 체크
         if(array_key_exists("u_name", $param_arr)) {
