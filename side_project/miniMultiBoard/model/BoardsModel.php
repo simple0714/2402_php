@@ -103,7 +103,7 @@ class BoardsModel extends Model {
 
             return $stmt->rowCount();
         } catch (\Throwable $th) {
-            echo "BoardsModel -> dlelteBoard(), ".$th->getMessage();
+            echo "BoardsModel -> deleteBoard(), ".$th->getMessage();
             exit;
         }
     }
