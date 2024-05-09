@@ -70,7 +70,7 @@ Route::get('/segment/{id}/{gender}', function($id, $gender) {
 });
 //http://localhost:8000/segment/123/F
 
-Route::get('/segment2/{id}/{gender}', function(Requset $request, $id) {
+Route::get('/segment2/{id}/{gender}', function(Request $request, $id) {
     return $request->$id." : ".$id." : ".$request->gender;
 });
 
@@ -114,10 +114,32 @@ Route::get('/send', function() {
     //     ]);
 });
 
+// ------------------------------------------------------------------------
+// 컨트롤러 연결
+// ------------------------------------------------------------------------
+// 커맨드로 컨트롤러 생성 : php artisan make:comtroller 컨트롤러명
+use App\Http\Controllers\TestController;
+// ex라서 중간에서 use해온거지만 보통은 최상단에서 몰아서 use한다.
+Route::get('/test', [TestController::class, 'index']);
+// TestController->create() : get
+Route::get('/test/create', [TestController::class, 'create']);
 
+// 리소스 라우터
+use App\Http\Controllers\TaskController;
+Route::resource('task', TaskController::class);
 
+// ------------------------------------------------------------------------
+// 블레이드 템플릿 연습용
+// ------------------------------------------------------------------------
+use App\Http\Controllers\EduController;
+use App\Http\Controllers\UserController;
 
+Route::get('/edu', [EduController::class, 'index']);
 
+// ------------------------------------------------------------------------
+// DB관련 연습용
+// ------------------------------------------------------------------------
+Route::get('/user', [UserController::class,'eduUser']);
 
 
 
