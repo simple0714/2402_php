@@ -1,0 +1,18 @@
+main{
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding-bottom: 5rem;
+}
+.login-container{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.login-box{
+    width: 30%;
+    margin: auto auto;
+    grid-row: 2/3;
+    
+}

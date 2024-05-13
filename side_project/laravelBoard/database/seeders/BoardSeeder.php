@@ -15,8 +15,6 @@ class BoardSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i <6; $i++) {
-            Board::factory(5000)->create();
-        }
+        Board::factory(10)->create();
     }
 }

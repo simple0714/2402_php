@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Board extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'type'
+        ,'user_id'
+        ,'title'
+        ,'content'
+        ,'img'
+    ];
 }
