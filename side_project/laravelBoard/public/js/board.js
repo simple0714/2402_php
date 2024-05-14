@@ -24,45 +24,43 @@ document.querySelectorAll(".my-btn-detail").forEach(item => {
                 btnDelete.value = '';
             } else {
                 btnDelete.classList.remove('d-none');
-                btnDelete.value = data.b_id;
+                btnDelete.value = data.id;
             }
 
-            // if(data.login_u_id === data.u_id) {
-            //     btnUpdate.classList.remove('d-none');
-            //     btnUpdate.value = '';
+            // //  삭제버튼 처리
+            // if(data.auth_id !== data.user_id) {
+            //     btnDelete.classList.remove('d-none');
+            //     btnDelete.value = '';
             // } else {
-            //     btnUpdate.classList.add('d-none');
-            //     btnUpdate.value = data.b_id;
+            //     btnDelete.classList.add('d-none');
+            //     btnDelete.value = data.id;
             // }
+            
 
         })
         .catch(err => console.log(err));
     });
 });
 
-//삭제 처리(async로 작성해보기)
-// document.querySelector('#my-btn-delete').addEventListener('click', myDeleteCard);
+//삭제 처리(체이닝 작성해보기)
+document.querySelector('#my-btn-delete').addEventListener('click', MyDeleteCard);
 
-// async function myDeleteCard(e) {
-//     const url = '/board/delete'; //url설정
-
-//     const data = new FormData(); //form설정
-//     data.append('b_id', e.target.value);
-//     try {
-//         const responese = await axios.post(url, data);
-//         console.log(responese.data);
-
-//         if(responese.data.errorFlg) {
-//             //에러일 경우 처리 
-//             alert('삭제 실패 했습니다');
-//         } else {
-//             //정상일 경우
-//             const main =document.querySelector('main'); // 부모요소
-//             const card = document.querySelector('#card' + responese.data.b_id); //삭제할 요소 
-//             main.removeChild(card);
-            
-//         }
-//     } catch (error) {
-//         console.log(error);
-//     }
-//}
+function MyDeleteCard(e) {
+    const url = '/board/' + e.target.value; //url
+    // console.log(url);
+    //Ajax 처리
+    axios.delete(url)
+    .then(response => {
+        // console.log(response);
+        if(response.data.errorFlg) {
+            //삭제 이상 발생
+            alert('삭제에 실패했습니다');
+        } else {
+            //정상처리
+            const main = document.querySelector('main');
+            const card = document.querySelector('#card' + response.data.deletedId);
+            main.removeChild(card);
+        }
+    })
+    .catch();
+}

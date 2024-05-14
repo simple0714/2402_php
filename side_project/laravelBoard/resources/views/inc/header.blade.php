@@ -13,9 +13,10 @@
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           게시판
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="./free.html">자유게시판</a></li>
-                            <li><a class="dropdown-item" href="./question.html">질문게시판</a></li>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            @foreach($globalBoardNameInfo as $item)
+                            <li><a class="dropdown-item" href="{{route('board.index').'?type='.$item->type}}">{{$item->name}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                 </ul>
@@ -23,7 +24,7 @@
             </div>
             @endauth
             @guest
-                <a href="#" class="navbar-nav nav-link text-light" role="button">회원가입</a>
+                <a href="{{route('regist.index')}}" class="navbar-nav nav-link text-light" role="button">회원가입</a>
             @endguest
         </div>
       </nav>

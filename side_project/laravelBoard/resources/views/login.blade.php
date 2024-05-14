@@ -1,6 +1,6 @@
 @extends('inc.layout')
 
-{{-- @section('title', '로그인') --}}
+@section('title', '로그인')
 @section('bodyClassVh', 'vh-100')
 {{-- <body class="vh-100"> --}}
 {{-- @endsection --}}
