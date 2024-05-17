@@ -4,29 +4,37 @@
   <HeaderComponent 
     :navList="navList"
   />
-  <div>
-    <div v-for="(item) in products" :key="item.productName">
-      <h4 @click="myOpenModal(item)">{{ item.productName }}</h4>
-      <p>{{item.price }}원</p>
-    </div>
-  </div>
+
+  <!-- 상품 리스트 -->
+  <ProductsList
+    :products="products"
+    @myOpenModal="myOpenModal"
+  >
+  <h3>부모쪽에서 정의한 슬롯</h3>
+  </ProductsList>
 
   <!-- 모달 -->
   <ModalDetail
-    :products="products"
     :product="product"
-    :flgModal="flgModal"
-  />
-
+    :flgModal="flgModal" 
+    @myCloseModal="myCloseModal"
+  >
+  </ModalDetail>
+<!-- : <- props, 데이터 전달 
+     @ <- 컴포넌트 이벤트, function 전달
+-->
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref, reactive, provide } from 'vue';
 import HeaderComponent from './components/HeaderComponent.vue'; //자식 컴포넌트 import
 import ModalDetail from './components/ModalDetail.vue' //모달 디테일 import
+import ProductsList from './components/ProductsList.vue';
 //----------------------------
 //데이터 바인딩
 //----------------------------
+
+//상품 리스트
 const products = reactive([
   {productName: '바지', price: 10000, productContent: '편한 바지 입니다.', img: require('@/assets/img/바지.jpg')},
   {productName: '티셔츠', price: 5000, productContent: '편한 티셔츠 입니다.', img: require('@/assets/img/티셔츠.jpg')},
@@ -49,10 +57,28 @@ const navList = reactive([
 //--------------------------------
 const flgModal = ref(false); //모달 표시용 플래그
 let product = reactive({}); 
+
 function myOpenModal(item) {
-  flgModal.value = !flgModal.value;
+  flgModal.value = true;
   product = item;
 }
+
+function myCloseModal(str) {
+  flgModal.value = false;
+  console.log(str); //파라미터 연습용
+}
+
+//Provide / Inject 연습
+const count = ref(0);
+function addCount() {
+  count.value++;
+}
+provide('test', {
+  count
+  ,addCount
+});
+
+
 
 </script>
 
