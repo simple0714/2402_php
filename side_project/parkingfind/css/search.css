@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+main {
+    margin: 0 15% 0 15%;
+}
+.search-title {
+    margin: 1rem 0 1rem 1rem;
+}
+.hr-line {
+    /* width: 100%; */
+    margin-bottom: 2rem;
+}
+/* 검색 버튼 */
+.search-button-container {
+    width: 100%;
+    display: flex;
+    gap: 0;
+}
+
+.search-button {
+    display: inline;
+    border: 1px solid black;
+    cursor: pointer;
+    width: 50%;
+    height: 2.5rem;
+    background-color: #fff;
+    font-size: 1rem;
+    font-weight: 900;
+}
+.search-button:not(:last-child) {
+    border-right: none;
+}
+
+.search-button.gray {
+    background-color: gray;
+}
+.api-container {
+    margin-top: 1rem;
+    border: 1px solid black;
+    width: 100%;
+    height: 40rem;
+}
+/* ---------- */
+
+/* 클릭시 모달 영역 */
+.detail-modal {
+    border: 1px solid black;
+    width: 100%;
+    height: 40rem;
+}
+.parking-img {
+    width: 90%;
+    height: 20rem;
+    border: 1px solid black;
+    margin: 2% 5% 2% 5%; 
+}
+/* .detail-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+.container-box {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+
+}
+.detail-content-title {
+    border: 1px solid black;
+    width: 90px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 2.9rem;
+    
+}
+.detail-content {
+    border: 1px solid black;
+    width: 85%;
+    height: 30px;
+}
+.hr-in-detail{
+    width: 100%;
+    margin: 5px 0 5px 0;
+}
+.button-container {
+    height: 10%;
+    border: 1px solid black;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.button-layout {
+    border: 1px solid black;
+    width: 100px;
+    height: 20px;
+}
