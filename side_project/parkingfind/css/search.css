@@ -104,3 +104,6 @@ main {
     width: 100px;
     height: 20px;
 }
+.button-layout:not(:last-child) {
+    margin-right: 2rem;
+}
