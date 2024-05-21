@@ -12,7 +12,7 @@ const routes = [
         component: LoginComponent
     },
     {
-        parth: '/board',
+        path: '/board',
         component: BoardComponent
     },
 ];

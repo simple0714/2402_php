@@ -51,4 +51,7 @@ class User extends Authenticatable
         return $value == '0' ? '남자' : '여자';
     }
 
+    public function boards() {
+        return $this->hasMany(Board::class);
+    }
 }
