@@ -22,7 +22,7 @@ class MyEncrypt {
      * @param string base64 URL encode
      * @return string @json
      */
-    public function base63UrlDecode(string $base64) {
+    public function base64UrlDecode(string $base64) {
         return base64_decode(strtr($base64, '-_','+/'));
     }
 
@@ -47,5 +47,17 @@ class MyEncrypt {
      */
     public function makeSalt($saltLength) {
         return Str::random($saltLength);
+    }
+
+    /**
+     * 특정 길이의 솔트를 제거한 문자열 반환
+     * 
+     * @param string $signature 시그니쳐
+     * @param int $saltLength 솔트 길이
+     * 
+     * @return string 솔트 제거한 문자열
+     */
+    public function subSalt(string $sinature, int $saltLength) {
+        return mb_substr($sinature, 0, (-1 * $saltLength));
     }
 }
