@@ -3,6 +3,7 @@ import LoginComponent from '../components/LoginComponent.vue';
 import BoardComponent from '../components/BoardComponent.vue';
 import BoardCreateComponent from '../components/BoardCreateComponent.vue';
 import store from './store';
+import UserRegistration from '../components/UserRegistration.vue';
 
 function chkAuth(to, from, next) {
     if(!store.state.authFlg) {
@@ -42,6 +43,10 @@ const routes = [
         component: BoardCreateComponent,
         beforeEnter: chkAuth,
     },
+    {
+        path: '/reigister',
+        component: UserRegistration,
+    }
 ];
 
 const router = createRouter({
