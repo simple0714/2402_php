@@ -41,7 +41,16 @@ const store = createStore({
         // 글 작성 처리
         setUnshiftBoardList(state, data) {
             state.boardData.unshift(data);
-        }
+        },
+        setUserBoardData(state, index) {
+            console.log(state.boardData)
+            state.boardData.splice(index, 1);       
+            console.log(state.boardData)
+        },
+        setUserBoardsCountSub(state) {
+            state.userInfo.boards_count--;
+        },
+
     },
     actions: {
         /**
@@ -88,6 +97,7 @@ const store = createStore({
 
                 context.commit('setAuthFlg', false);
                 context.commit('setUserInfo', null);
+                context.commit('setBoardData', []);
 
                 router.replace('/login');
             });
@@ -178,6 +188,36 @@ const store = createStore({
             });
             
         },
+        /**
+         * 글 삭제 처리
+         */
+        deleteBoard(context, id) {
+            const url = '/api/deleteBoard/' +id;
+            
+            axios.delete(url)
+            .then(response=>{
+                console.log(response.data.data)
+
+                context.state.boardData.forEach(item, key => {
+                    if(item.id == response.data.data) {
+                        context.commit('setUserBoardData', key)
+                        return false;
+                    }
+                });
+
+                // 유저의 작성글 수 1 하락
+                context.commit('setUserBoardsCountSub');
+                localStorage.setItem('userInfo', JSON.stringify(context.state.userInfo));
+                router.replace('/board')
+
+            })
+            .catch(error => {
+                console.log(error.response);
+                alert('글 삭제에 실패했습니다.(' + error.response.data.code + ')')
+            })
+        }
+
+
     }
 });
 
